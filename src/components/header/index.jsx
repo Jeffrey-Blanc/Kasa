@@ -1,23 +1,40 @@
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import Logo from '../../assets/LogoPink.png'
+
+const HeaderContainer = styled.header`
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px;
+`
+
+const HeaderLogo = styled.img`
+  height: 70px;
+`
+
+const ListNav = styled.ul`
+  display: flex;
+  list-style-type: none;
+`
+
 
 function Header () {
   return (
-    <div>
-      <h2>Header</h2>
+    <HeaderContainer>
+      <Link to="/">
+        <HeaderLogo src={Logo}/>
+      </Link>
       <nav>
-        <ul>
+        <ListNav>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Accueil</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">A propos</Link>
           </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-        </ul>
+        </ListNav>
       </nav>
-  </div>
+  </HeaderContainer>
   )
 }
 
