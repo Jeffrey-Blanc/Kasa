@@ -1,34 +1,38 @@
 import React from "react"
 import Header from "./components/Header";
 import Footer from "./components/Footer"
-
+import styled from "styled-components"
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
+const HeaderAndMain = styled.div`
+  margin: 0 100px;
+`
+
 export default function App() {
   return (
-    <div>
       <Router>
-        <Header />
-        <div>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/users">
-              <Users />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
+        <HeaderAndMain>
+          <Header />
+          <main>
+            <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/users">
+                <Users />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </main>
+        </HeaderAndMain>
         <Footer />
       </Router>
-    </div>
   );
 }
 

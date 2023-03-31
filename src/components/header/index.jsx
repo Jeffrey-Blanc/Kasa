@@ -6,7 +6,7 @@ import Logo from '../../assets/LogoPink.png'
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 40px 100px;
+  padding: 40px 0;
   align-items: center;
 `
 
