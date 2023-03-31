@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./components/Header";
 import Footer from "./components/Footer"
+import Error from "./components/Error"
 import styled from "styled-components"
 import {
   BrowserRouter as Router,
@@ -25,8 +26,11 @@ export default function App() {
               <Route path="/users">
                 <Users />
               </Route>
-              <Route path="/">
+              <Route exact path="/">
                 <Home />
+              </Route>
+              <Route>
+                <Error />
               </Route>
             </Switch>
           </main>

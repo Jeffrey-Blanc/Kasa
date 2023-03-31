@@ -20,4 +20,8 @@ export const StyledLink = styled(Link)`
   &:visited {
     color: ${colors.primary};
   }
+  ${(props) =>
+    props.$isErrorLink &&
+    `font-size: 2vh; 
+    margin: 20px 0; `}
 `
