@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer"
 import Error from "./components/Error"
 import Home from "./pages/Home"
+import About from "./pages/About"
 
 import {
   BrowserRouter as Router,
@@ -32,9 +33,6 @@ root.render(
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/users">
-              <Users />
-            </Route>
             <Route>
               <Error />
             </Route>
@@ -46,13 +44,6 @@ root.render(
   </React.StrictMode>
 );
 
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
