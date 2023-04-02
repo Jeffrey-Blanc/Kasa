@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import colors from '../../utils/style/colors'
 import ImgRemplacer from '../../assets/img-about.png'
 
 const CardWrapper = styled.div`
@@ -7,10 +6,18 @@ const CardWrapper = styled.div`
   width: 340px;
   height: 340px;
   border-radius: 10px;
-  background: ${colors.primary}  
+  overflow: hidden;
 `
+const GradientWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+`
+
 const CardImage = styled.img`
-  border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -27,11 +34,10 @@ const CardTitle = styled.h3`
   font-weight: 500;
 `
 
-// background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-
 function Card() {
   return (
     <CardWrapper>
+      <GradientWrapper />
       <CardImage src={ImgRemplacer}/>
       <CardTitle>
         Test
