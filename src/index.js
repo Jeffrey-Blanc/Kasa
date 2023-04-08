@@ -34,7 +34,7 @@ root.render(
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/apartment">
+            <Route path="/apartment/:id">
               <Apartment />
             </Route>
             <Route>

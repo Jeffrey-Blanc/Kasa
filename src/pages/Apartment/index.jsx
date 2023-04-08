@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import PhotoApartment from '../../assets/img-about.png'
+import { useParams } from 'react-router-dom'
+import { apartmentList } from '../../datas/apartmentList'
 
 const CarouselApartment = styled.div`
   position: relative;
@@ -40,16 +41,22 @@ const WrapperCollapse = styled.div`
 `
 
 function Apartment() {
+  const { id } = useParams()
+  
+  const apartment = apartmentList.find(id => id);
+  console.log(apartment);
+  
   return (
-    <div>Apartment
+    <div>
+      <h2 key={ id }>Apartment { id }</h2>
       <CarouselApartment>
-        <PictureApartment src={PhotoApartment}/>
+        <PictureApartment src={apartment.cover}/>
         <button>Left</button>
         <button>Right</button>
       </CarouselApartment>
       <InformationContain>
         <div>
-          <h2>Title</h2>
+          <h2>{apartment.title}</h2>
           <p>Location</p>
           <div>
             <div>Tag</div>
