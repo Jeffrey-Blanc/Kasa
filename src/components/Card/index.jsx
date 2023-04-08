@@ -1,5 +1,19 @@
 import styled from 'styled-components'
-import ImgRemplacer from '../../assets/img-about.png'
+import colors from '../../utils/style/colors'
+import { apartmentList } from '../../datas/apartmentList'
+import { Link } from 'react-router-dom'
+
+const CardsContainer = styled.div`
+  display: grid;
+  gap: 24px;
+  grid-template-rows: 350px 340px;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: ${colors.secondary};
+  border-radius: 25px;
+  padding: 56px 50px;
+`
 
 const CardWrapper = styled.div`
   position: relative;
@@ -36,13 +50,19 @@ const CardTitle = styled.h3`
 
 function Card() {
   return (
-    <CardWrapper>
-      <GradientWrapper />
-      <CardImage src={ImgRemplacer}/>
-      <CardTitle>
-        Test
-      </CardTitle>
-    </CardWrapper>
+  <CardsContainer>
+    {apartmentList.map(({ id, cover, title }) => 
+    <Link to={`/apartment/${ id }`}>
+      <CardWrapper>
+        <GradientWrapper />
+        <CardImage src={ cover }/>
+        <CardTitle>
+          { title }
+        </CardTitle>
+      </CardWrapper>
+    </Link>
+    )}
+  </CardsContainer>
   )
 }
 

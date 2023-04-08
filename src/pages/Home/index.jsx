@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import PhotoHome from '../../assets/img-home.png'
-import colors from '../../utils/style/colors'
 import Card from '../../components/Card'
 
 const CoverHome = styled.div`
@@ -41,19 +40,6 @@ const BackgroundCoverHome = styled.div`
   border-radius: 25px;
   opacity: 0.3;
 `
-
-const CardsContainer = styled.div`
-  display: grid;
-  gap: 24px;
-  grid-template-rows: 350px 340px;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-items: center;
-  background-color: ${colors.secondary};
-  border-radius: 25px;
-  padding: 56px 50px;
-`
-
 function Home() {
   return (
     <div>
@@ -64,27 +50,7 @@ function Home() {
         <BackgroundCoverHome />
         <PictureHome src={PhotoHome}/>
       </CoverHome>
-      <CardsContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </CardsContainer>
+      <Card />
     </div>
   )
 }
