@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import Error from "./components/Error"
 import Home from "./pages/Home"
 import About from "./pages/About"
+import Apartment from "./pages/Apartment"
 
 import {
   BrowserRouter as Router,
@@ -32,6 +33,9 @@ root.render(
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/apartment">
+              <Apartment />
             </Route>
             <Route>
               <Error />
