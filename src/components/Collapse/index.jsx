@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+import { useState } from 'react'
 
 const WrapperCollapse = styled.div`
   margin: 20px 0;
@@ -27,72 +27,24 @@ const ContentCollapse = styled.div`
   border-radius: 5px;
 `
 
-function Collapse() {
+function Collapse(props) {
   const [isActive, setIsActive] = useState(false)
-  return isActive ? (
-    <div>
-      <WrapperCollapse>
-        <TitleCollapse onClick={() => setIsActive(false)}>
-          Fiabilité
+
+  const toggle = () => {
+    setIsActive(!isActive);
+  }
+
+  return (
+    <WrapperCollapse>
+        <TitleCollapse onClick={toggle}>
+          {props.title}
         </TitleCollapse>
-        <ContentCollapse>
-          Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont 
-          régulièrement vérifiées par nos équipes.
-        </ContentCollapse>
-      </WrapperCollapse>
-      <WrapperCollapse>
-        <TitleCollapse onClick={() => setIsActive(false)}>
-          Respect
-        </TitleCollapse>
-        <ContentCollapse>
-          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera 
-          une exclusion de notre plateforme.
-        </ContentCollapse>
-      </WrapperCollapse>
-      <WrapperCollapse>
-        <TitleCollapse onClick={() => setIsActive(false)}>
-          Service
-        </TitleCollapse>
-        <ContentCollapse>
-          Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. 
-          N'hésitez pas à nous contacter si vous avez la moindre question.
-        </ContentCollapse>
-      </WrapperCollapse>
-      <WrapperCollapse>
-        <TitleCollapse onClick={() => setIsActive(false)}>
-          Sécurité
-        </TitleCollapse>
-        <ContentCollapse>
-          La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, 
-          chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, 
-          cela permet à nos équipes de vérifier que les standards sont bien respectés. 
-          Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.
-        </ContentCollapse>
-      </WrapperCollapse>
-    </div>
-  ) : (
-    <div>
-      <WrapperCollapse>
-        <TitleCollapse onClick={() => setIsActive(true)}>
-          Fiabilité
-        </TitleCollapse>
-      </WrapperCollapse>
-      <WrapperCollapse>
-        <TitleCollapse onClick={() => setIsActive(true)}>
-          Respect
-        </TitleCollapse>
-      </WrapperCollapse>
-      <WrapperCollapse>
-        <TitleCollapse onClick={() => setIsActive(true)}>
-          Service
-        </TitleCollapse>
-      </WrapperCollapse>
-      <WrapperCollapse>
-        <TitleCollapse onClick={() => setIsActive(true)}>
-          Sécurité
-        </TitleCollapse>
-      </WrapperCollapse>
-    </div>
+        {isActive && (
+            <ContentCollapse>
+              {props.content}
+            </ContentCollapse> 
+        )}
+    </WrapperCollapse>
   )
 }
 
