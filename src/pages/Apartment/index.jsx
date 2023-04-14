@@ -107,7 +107,6 @@ function Apartment() {
 
   return (
     <div>
-      <h2 key={ id }>Apartment { id }</h2>
       <CarouselApartment>
         {apartment.pictures.map((picture) => 
           <PictureApartment src={picture}/>

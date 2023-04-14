@@ -29,21 +29,30 @@ const ContentCollapse = styled.div`
 
 function Collapse(props) {
   const [isActive, setIsActive] = useState(false)
-
-  const toggle = () => {
-    setIsActive(!isActive);
+  let ListContent = ""
+  if(Array.isArray(props.content)){
+    ListContent = props.content.map((content) => 
+      <li>{content}</li>
+    );
   }
 
   return (
     <WrapperCollapse>
-        <TitleCollapse onClick={toggle}>
-          {props.title}
-        </TitleCollapse>
-        {isActive && (
-            <ContentCollapse>
-              {props.content}
-            </ContentCollapse> 
-        )}
+      <TitleCollapse onClick={() => setIsActive(!isActive)}>
+        {props.title}
+      </TitleCollapse>
+      {isActive && !Array.isArray(props.content) && (
+        <ContentCollapse>
+          {props.content}
+        </ContentCollapse>
+      )}
+      {isActive && Array.isArray(props.content) && (
+        <ContentCollapse>
+          <ul>
+            {ListContent}
+          </ul>
+        </ContentCollapse>
+      )}
     </WrapperCollapse>
   )
 }
