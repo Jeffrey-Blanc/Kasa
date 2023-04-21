@@ -1,33 +1,15 @@
 import Logo from '../../assets/LogoWhite.png'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
-const FooterLogo = styled.img`
-  height: 50px;
-  margin: 20px;
-`
-
-const FooterContainer = styled.footer`
-  // position: absolute;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #000;
-  color: #fff;
-  padding: 40px;
-`
+import styles from './Footer.module.css'
 
 function Footer () {
   return (
-    <FooterContainer>
+    <footer className={styles.footerContainer}>
       <Link to="/">
-          <FooterLogo src={Logo}/>
+          <img className={styles.footerLogo} src={Logo} alt="Logo Kasa"/>
       </Link>
       <span>© 2020 Kasa. All rights reserved</span>
-    </FooterContainer>
+    </footer>
   )
 }
 

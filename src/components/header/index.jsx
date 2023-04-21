@@ -1,24 +1,13 @@
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
 import { StyledLink } from '../../utils/style/Atoms'
 import Logo from '../../assets/LogoPink.png'
-
-const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 0;
-  align-items: center;
-`
-
-const HeaderLogo = styled.img`
-  height: 70px;
-`
+import styles from './Header.module.css'
 
 function Header () {
   return (
-    <HeaderContainer>
+    <header className={styles.headerContainer}>
       <Link to="/">
-        <HeaderLogo src={Logo}/>
+        <img src={Logo} className={styles.headerLogo} alt="Logo Kasa"/>
       </Link>
       <div>
         <StyledLink to="/">
@@ -28,7 +17,7 @@ function Header () {
           <span>A propos</span>
         </StyledLink>
       </div>
-  </HeaderContainer>
+  </header>
   )
 }
 

@@ -1,0 +1,26 @@
+.carouselAbout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 225px;
+  color: white;
+  text-align: center;
+}
+
+.pictureAbout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-height: 225px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.containerAbout {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 110px;
+}

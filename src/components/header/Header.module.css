@@ -1,0 +1,10 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+  align-items: center;
+}
+
+.headerLogo {
+  height: 70px;
+}

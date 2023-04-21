@@ -1,31 +1,5 @@
-import styled from 'styled-components'
-import colors from '../../utils/style/colors'
 import { useState } from 'react'
-
-const WrapperCollapse = styled.div`
-  margin: 20px 0;
-`
-
-const TitleCollapse = styled.h2`
-  background-color: ${colors.primary};
-  color: #fff;
-  cursor: pointer;
-  padding: 18px;
-  margin: 0px;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  border-radius: 5px;
-`
-const ContentCollapse = styled.div`
-  display: block;
-  color: ${colors.primary};
-  padding: 18px;
-  overflow: hidden;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-`
+import styles from './Collapse.module.css'
 
 function Collapse(props) {
   const [isActive, setIsActive] = useState(false)
@@ -37,23 +11,23 @@ function Collapse(props) {
   }
 
   return (
-    <WrapperCollapse>
-      <TitleCollapse onClick={() => setIsActive(!isActive)}>
+    <section className={styles.wrapperCollapse}>
+      <h2 className={styles.titleCollapse} onClick={() => setIsActive(!isActive)}>
         {props.title}
-      </TitleCollapse>
+      </h2>
       {isActive && !Array.isArray(props.content) && (
-        <ContentCollapse>
+        <p className={styles.contentCollapse}>
           {props.content}
-        </ContentCollapse>
+        </p>
       )}
       {isActive && Array.isArray(props.content) && (
-        <ContentCollapse>
+        <div className={styles.contentCollapse}>
           <ul>
             {ListContent}
           </ul>
-        </ContentCollapse>
+        </div>
       )}
-    </WrapperCollapse>
+    </section>
   )
 }
 
