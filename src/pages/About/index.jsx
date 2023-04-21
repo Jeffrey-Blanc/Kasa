@@ -10,8 +10,9 @@ function About() {
         <img className={styles.pictureAbout} src={PhotoAbout} alt="Paysage vallee"/>
       </div>
       <div className={styles.containerAbout}>
-        {aboutList.map(({ title, content}) =>
+        {aboutList.map(({ title, content, index}) =>
         <Collapse 
+          key={`${title}-${index}`}
           title={title} 
           content={content}/>
          )}
