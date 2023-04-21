@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { apartmentList } from '../../datas/apartmentList'
 import Collapse from '../../components/Collapse'
 import colors from '../../utils/style/colors'
+import { useState } from 'react'
 
 // Carrousel
 const CarouselApartment = styled.div`
@@ -101,19 +102,53 @@ const WrapperCollapse = styled.div`
   justify-content: space-between;
 `
 
+
+const CommandesCarrousel = styled.div`
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 415px;
+  color: white;
+  text-align: center;
+  `
+
 function Apartment() {
   const { id } = useParams()
   const apartment = apartmentList.find(apartment => apartment.id === id);
+  const [index, setIndex] = useState(0)
+
+  const nextPicture = () => {
+    if (index === apartment.pictures.length - 1) {
+      setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+    // setIndex((index + 1) % apartment.pictures.length)
+  }
+
+  const previousPicture = () => {
+    if ((index) === 0) {
+      setIndex(apartment.pictures.length - 1);
+    } else {
+      setIndex(index - 1);
+    }
+    // setIndex((index + apartment.pictures.length  - 1) %  apartment.pictures.length)
+  }
+
 
   return (
     <div>
       <CarouselApartment>
-        {apartment.pictures.map((picture) => 
-          <PictureApartment src={picture}/>
+        <PictureApartment src={apartment.pictures[index]}/>
+        {(apartment.pictures.length > 1) && (
+          <CommandesCarrousel>
+            <Button><i class="fa-solid fa-chevron-left" onClick={previousPicture}></i></Button>
+            <PagePicture> {index + 1}/{ apartment.pictures.length } </PagePicture>
+            <Button><i class="fa-solid fa-chevron-right" onClick={nextPicture}></i></Button>
+          </CommandesCarrousel>
         )}
-        <Button><i class="fa-solid fa-chevron-left"></i></Button>
-        <PagePicture> 1/4 </PagePicture>
-        <Button><i class="fa-solid fa-chevron-right"></i></Button>
       </CarouselApartment>
       <InformationContain>
         <div>
