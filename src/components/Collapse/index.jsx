@@ -5,8 +5,9 @@ function Collapse(props) {
   const [isActive, setIsActive] = useState(false)
   let ListContent = ""
   if(Array.isArray(props.content)){
-    ListContent = props.content.map((content) => 
-      <li>{content}</li>
+    ListContent = props.content.map((content, index) =>
+      // <li>{content}</li>
+      <li key={`${content}-${index}`}>{content}</li>
     );
   }
 

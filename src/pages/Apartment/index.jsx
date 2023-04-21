@@ -7,11 +7,12 @@ import styles from './Apartment.module.css'
 function Apartment() {
   const { id } = useParams()
   const apartment = apartmentList.find(apartment => apartment.id === id);
+  let className = 'fa-solid fa-star';
 
   return (
     <div>
       <Slideshow apartment={apartment}/>
-      
+
       <section className={styles.informationContain}>
         <section>
           <h2 className={styles.titleApartment}>{apartment.title}</h2>
@@ -29,18 +30,18 @@ function Apartment() {
 
       <section className={styles.informationContain}>
         <div className={styles.containTag}>
-          {apartment.tags.map((tag) => (
-            <div className={styles.tag}>
+          {apartment.tags.map((tag, index) => (
+            <div key={`${tag}-${index}`} className={styles.tag}>
               {tag}
             </div>
           ))}
         </div>
           <div>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+            <i className={className}></i>
+            <i className={className}></i>
+            <i className={className}></i>
+            <i className={className}></i>
+            <i className={className}></i>
           </div>
       </section>
 

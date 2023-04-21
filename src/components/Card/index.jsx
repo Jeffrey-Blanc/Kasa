@@ -6,7 +6,7 @@ function Card() {
   return (
   <section className={styles.cardsContainer}>
     {apartmentList.map(({ id, cover, title }) => 
-    <Link to={`/apartment/${ id }`}>
+    <Link key={`${ id }`} to={`/apartment/${ id }`}>
       <div className={styles.cardWrapper}>
       <div className={styles.gradientWrapper}></div>
         <img className={styles.cardImage} src={ cover } alt="Presentation couverture logement"/>
