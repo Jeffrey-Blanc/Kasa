@@ -1,0 +1,52 @@
+.carouselApartment {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 415px;
+  color: white;
+  text-align: center;
+}
+
+.pictureApartment {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 415px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.carouselCommandes {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 415px;
+  color: white;
+  text-align: center;
+}
+
+.commandesButton {
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: initial;
+  color: white;
+  font-size: 4rem;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.pagePicture {
+  z-index: 2;
+  align-self: flex-end;
+  margin-bottom: 25px;
+  color: white;
+  font-weight: bold;
+}
