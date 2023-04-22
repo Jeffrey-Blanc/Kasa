@@ -50,4 +50,19 @@
 
 .wrapperCollapse > section {
   width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapperCollapse section.isActive {
+  background-color: #f1f1f1!;
+  height: 600px;
+}
+
+.wrapperCollapse > section > p {
+  margin: auto 0;
+}
+
+.listEquipements {
+  list-style-type: none;
 }

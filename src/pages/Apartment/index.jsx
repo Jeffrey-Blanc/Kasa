@@ -6,8 +6,18 @@ import styles from './Apartment.module.css'
 
 function Apartment() {
   const { id } = useParams()
-  const apartment = apartmentList.find(apartment => apartment.id === id);
-  let className = 'fa-solid fa-star';
+  const apartment = apartmentList.find(apartment => apartment.id === id)
+  let starFilled = 'fa-solid fa-star'
+  let starEmpty = 'fa-regular fa-star'
+
+  let noteRating = []
+  for(let i = 0; i <= 4; i++) {
+    if(apartment.rating >= (i + 1)){
+      noteRating.push(<i key={`${apartment.rating}-${i}`} className={starFilled}></i>)
+    } else {
+      noteRating.push(<i key={`${apartment.rating}-${i}`} className={starEmpty}></i>)
+    }
+  }
 
   return (
     <div>
@@ -37,11 +47,12 @@ function Apartment() {
           ))}
         </div>
           <div>
-            <i className={className}></i>
-            <i className={className}></i>
-            <i className={className}></i>
-            <i className={className}></i>
-            <i className={className}></i>
+            {noteRating}
+            {/* <i className={starFilled}></i>
+            <i className={starFilled}></i>
+            <i className={starFilled}></i>
+            <i className={starFilled}></i>
+            <i className={starFilled}></i> */}
           </div>
       </section>
 
