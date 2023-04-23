@@ -3,10 +3,17 @@ import { apartmentList } from '../../datas/apartmentList'
 import Slideshow from '../../components/Slideshow'
 import Collapse from '../../components/Collapse'
 import styles from './Apartment.module.css'
+import Error from "../../components/Error"
+
 
 function Apartment() {
   const { id } = useParams()
   const apartment = apartmentList.find(apartment => apartment.id === id)
+
+  if(!apartment) {
+    return <Error />
+  }
+
   let starFilled = 'fa-solid fa-star'
   let starEmpty = 'fa-regular fa-star'
 
