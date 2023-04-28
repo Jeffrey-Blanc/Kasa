@@ -18,15 +18,23 @@ import {
 } from "react-router-dom";
 
 const HeaderAndMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   margin: 0 100px;
 `
+
+const Main = styled.main`
+  margin: auto 0;
+`
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
       <HeaderAndMain>
         <Header />
-        <main>
+        <Main>
           <Switch>
             <Route exact path="/">
               <Home />
@@ -41,7 +49,7 @@ root.render(
               <Error />
             </Route>
           </Switch>
-        </main>
+        </Main>
       </HeaderAndMain>
       <Footer />
     </Router>
