@@ -38,8 +38,7 @@
   list-style-type: none;
 }
 
-/* Doesn't work */
-.isActive i.fa-solid.fa-chevron-down {
-  transform: rotate(2.5turn);
-  transition: transform 300ms ease-in-out;
+.isActive {
+  background-color: #f1f1f1;
+  border-radius: 10px
 }
