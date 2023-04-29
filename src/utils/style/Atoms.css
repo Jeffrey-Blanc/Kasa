@@ -16,7 +16,7 @@
   color: #FF6060;
 }
 
-@media (min-width: 320px) and (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 768px) {
   .link {
     font-size: 1em;
     padding: 0;

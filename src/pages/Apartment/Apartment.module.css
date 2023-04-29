@@ -1,13 +1,24 @@
-.informationContain {
+.informationGlobal {
   display: flex;
   justify-content: space-between;
+}
+
+.informationApartment, .informationProfile {
+  display: flex;
+  flex-direction: column;
   margin: 20px 0;
   /* color: ${colors.primary}; */
   color: #FF6060;
 }
 
-.titleApartment, .locationApartment {
-  margin: 0;
+.titleApartment {
+  margin: 5px;
+  font-size: 1.8em;
+}
+
+.locationApartment {
+  margin: 5px;
+  font-size: 1.3em;
 }
 
 .containProfile {
@@ -19,7 +30,7 @@
 .nameProfile {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 30%;
   text-align: right;
   margin-right: 10px;
 }
@@ -32,6 +43,7 @@
 
 .containTag {
   display: flex;
+  margin-top: 20px;
 }
 
 .tag {
@@ -41,6 +53,13 @@
   margin-right: 1em;
   padding: 0.3em 3em;
   border-radius: 1em;
+  max-height: 25px;
+  font-size: 0.9em;
+}
+
+.rating {
+  margin-top: auto;
+  font-size: 1.5em;
 }
 
 .wrapperCollapse {
@@ -60,4 +79,45 @@
 
 .listEquipements {
   list-style-type: none;
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .informationGlobal, .wrapperCollapse {
+    flex-direction: column;
+  }
+
+  .titleApartment {
+    font-size: 1.2em;
+  }
+
+  .locationApartment {
+    font-size: 1.1em;
+  }
+
+  .containTag {
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.6em;
+    margin: 1em 1em 1em 0;
+  }
+
+  .informationProfile {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    font-size: 0.9em;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    margin: 0;
+  }
+
+  .wrapperCollapse > section {
+    width: 100%;
+  }
 }

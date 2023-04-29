@@ -34,7 +34,7 @@ code {
   margin: auto 0;
 }
 
-@media (min-width: 320px) and (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 768px) {
   .headerAndMain {
     margin: 0 20px;
   }

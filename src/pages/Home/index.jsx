@@ -1,4 +1,3 @@
-// import styled from 'styled-components'
 import PhotoHome from '../../assets/img-home.png'
 import Card from '../../components/Card'
 import styles from './Home.module.css'

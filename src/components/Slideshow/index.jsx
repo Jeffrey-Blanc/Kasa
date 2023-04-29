@@ -6,7 +6,6 @@ function Slideshow(props) {
   let classNameLeft = 'fa-solid fa-chevron-left';
   let classNameRight = 'fa-solid fa-chevron-right';
 
-  // console.log(props.apartment.pictures);
   const nextPicture = () => {
     if (index === props.apartment.pictures.length - 1) {
       setIndex(0);
@@ -30,12 +29,10 @@ function Slideshow(props) {
       <img className={styles.pictureApartment} src={props.apartment.pictures[index]} alt="Slide presentation appartement"/>
       {(props.apartment.pictures.length > 1) && (
         <div className={styles.carouselCommandes}>
-          {/* <button className={styles.commandesButton}><i class="fa-solid fa-chevron-left" onClick={previousPicture}></i></button> */}
           <button className={styles.commandesButton}><i className={classNameLeft} onClick={previousPicture}></i></button>
           <div className={styles.pagePicture}> 
             {index + 1}/{ props.apartment.pictures.length } 
           </div>
-          {/* <button className={styles.commandesButton}><i class="fa-solid fa-chevron-right" onClick={nextPicture}></i></button> */}
           <button className={styles.commandesButton}><i className={classNameRight} onClick={nextPicture}></i></button>
         </div>
       )}

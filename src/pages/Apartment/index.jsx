@@ -30,38 +30,38 @@ function Apartment() {
     <div>
       <Slideshow apartment={apartment}/>
 
-      <section className={styles.informationContain}>
-        <section>
-          <h2 className={styles.titleApartment}>{apartment.title}</h2>
-          <p className={styles.locationApartment}>
-            {apartment.location}
-          </p>
-        </section>
-        <div className={styles.containProfile}>
-          <div className={styles.nameProfile}>
-            {apartment.host.name}
-          </div>
-          <img className={styles.avatarProfile} src={apartment.host.picture} alt="Avatar profile"/>
-        </div>
-      </section>
+      <div className={styles.informationGlobal}>
+        <div className={styles.informationApartment}>
+          <section>
+            <h2 className={styles.titleApartment}>{apartment.title}</h2>
+            <p className={styles.locationApartment}>
+              {apartment.location}
+            </p>
+          </section>
 
-      <section className={styles.informationContain}>
-        <div className={styles.containTag}>
-          {apartment.tags.map((tag, index) => (
-            <div key={`${tag}-${index}`} className={styles.tag}>
-              {tag}
-            </div>
-          ))}
-        </div>
-          <div>
-            {noteRating}
-            {/* <i className={starFilled}></i>
-            <i className={starFilled}></i>
-            <i className={starFilled}></i>
-            <i className={starFilled}></i>
-            <i className={starFilled}></i> */}
+          <div className={styles.containTag}>
+            {apartment.tags.map((tag, index) => (
+              <div key={`${tag}-${index}`} className={styles.tag}>
+                {tag}
+              </div>
+            ))}
           </div>
-      </section>
+        </div>
+
+
+        <div className={styles.informationProfile}>
+          <div className={styles.containProfile}>
+            <div className={styles.nameProfile}>
+              {apartment.host.name}
+            </div>
+            <img className={styles.avatarProfile} src={apartment.host.picture} alt="Avatar profile"/>
+          </div>
+
+          <div className={styles.rating}>
+              {noteRating}
+          </div>
+        </div>
+      </div>
 
       <div className={styles.wrapperCollapse}>
         <Collapse title='Description' content={apartment.description}/>

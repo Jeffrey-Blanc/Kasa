@@ -16,7 +16,7 @@
   font-size: 2em;
 }
 
-@media (min-width: 320px) and (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 768px) {
   .errorTitle {
     font-size: 6em;
   }
