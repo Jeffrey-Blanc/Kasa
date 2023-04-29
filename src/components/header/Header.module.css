@@ -8,3 +8,14 @@
 .headerLogo {
   height: 70px;
 }
+
+.containNavigation {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .headerLogo {
+    height: 40px;
+  }
+}

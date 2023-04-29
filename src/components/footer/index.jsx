@@ -1,13 +1,14 @@
 import Logo from '../../assets/LogoWhite.png'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
+import '../../utils/style/Atoms.css'
 
 function Footer () {
   return (
     <footer className={styles.footerContainer}>
-      <Link to="/">
+      <a className="link" href="/">
           <img className={styles.footerLogo} src={Logo} alt="Logo Kasa"/>
-      </Link>
+      </a>
       <span>© 2020 Kasa. All rights reserved</span>
     </footer>
   )

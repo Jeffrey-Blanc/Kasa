@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import styled from "styled-components"
-
 import Header from "./components/Header";
 import Footer from "./components/Footer"
 import Error from "./components/Error"
@@ -11,30 +9,20 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Apartment from "./pages/Apartment"
 
+
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
-const HeaderAndMain = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin: 0 100px;
-`
-
-const Main = styled.main`
-  margin: auto 0;
-`
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <HeaderAndMain>
+      <div className="headerAndMain">
         <Header />
-        <Main>
+        <main className="main">
           <Switch>
             <Route exact path="/">
               <Home />
@@ -49,8 +37,8 @@ root.render(
               <Error />
             </Route>
           </Switch>
-        </Main>
-      </HeaderAndMain>
+        </main>
+      </div>
       <Footer />
     </Router>
   </React.StrictMode>

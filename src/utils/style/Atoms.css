@@ -1,0 +1,29 @@
+.link, .link--error {
+  font-size: 24px;
+  padding: 10px 15px;
+  color: #FF6060;    
+  text-align: center;
+  text-decoration: none;   
+}
+
+.link--error {
+  font-size: 1.5em; 
+  margin: 20px 0;
+  text-decoration: underline;
+}
+
+.link:visited, .link--error:visited {
+  color: #FF6060;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .link {
+    font-size: 1em;
+    padding: 0;
+    margin: 5px;
+  }
+
+  .link--error {
+    font-size: 1em;
+  }
+}
