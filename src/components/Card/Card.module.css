@@ -1,8 +1,10 @@
 .cardsContainer {
   display: grid;
   gap: 24px;
-  grid-template-rows: 350px 340px;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 350px 340px;
+  grid-template-columns: repeat(3, 1fr); */
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-items: center;
   /* background-color: ${colors.secondary}; */
@@ -10,6 +12,10 @@
   border-radius: 25px;
   padding: 56px 50px;
   margin: 40px 0;
+}
+
+.cardsContainer > a {
+  margin: auto;
 }
 
 .cardWrapper {
@@ -49,6 +55,12 @@
   z-index: 3;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   .cardWrapper {
     width: 100%;
@@ -60,7 +72,7 @@
   
   .cardsContainer {
     display: initial;
-    background: none;
+    background: initial;
     padding: 0;
   }
 }

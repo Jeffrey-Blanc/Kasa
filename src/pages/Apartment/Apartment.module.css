@@ -32,7 +32,7 @@
   flex-wrap: wrap;
   width: 30%;
   text-align: right;
-  margin-right: 10px;
+  margin-right: 1.5em;
 }
 
 .avatarProfile {
@@ -87,6 +87,10 @@
     flex-direction: column;
   }
 
+  .informationApartment, .informationProfile {
+    margin: 0;
+  }
+
   .titleApartment {
     font-size: 1.2em;
   }
@@ -115,6 +119,14 @@
     align-items: center;
     font-size: 0.9em;
     margin: 0;
+  }
+
+  .nameProfile {
+    font-size: 0.8em;
+  }
+  .avatarProfile {
+    width: 32px;
+    height: 32px;
   }
 
   .wrapperCollapse > section {
