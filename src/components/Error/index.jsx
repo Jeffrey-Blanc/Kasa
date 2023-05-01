@@ -1,7 +1,12 @@
+import {useEffect} from "react";
 import styles from './Error.module.css'
 import '../../utils/style/Atoms.css';
 
 function Error() {
+  useEffect(() => {
+    document.title = "Kasa - Erreur";
+  }, []);
+
   return (
     <section className={styles.errorContainer}>
       <h2 className={styles.errorTitle}>

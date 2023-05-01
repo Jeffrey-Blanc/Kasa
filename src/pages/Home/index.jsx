@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import PhotoHome from '../../assets/img-home.png'
 import Card from '../../components/Card'
 import styles from './Home.module.css'
 
 function Home() {
+  useEffect(() => {
+    document.title = "Kasa - Accueil";
+  }, []);
+
   return (
     <div>
       <div className={styles.coverHome}>

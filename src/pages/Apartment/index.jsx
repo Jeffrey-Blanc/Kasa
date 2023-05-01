@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import { useParams } from 'react-router-dom'
 import { apartmentList } from '../../datas/apartmentList'
 import Slideshow from '../../components/Slideshow'
@@ -9,6 +10,10 @@ import Error from "../../components/Error"
 function Apartment() {
   const { id } = useParams()
   const apartment = apartmentList.find(apartment => apartment.id === id)
+
+  useEffect(() => {
+    document.title = "Kasa - Appartement";
+  }, []);
 
   if(!apartment) {
     return <Error />
